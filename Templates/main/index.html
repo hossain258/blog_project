@@ -1,0 +1,31 @@
+{% extends "Components/base.html" %}
+
+{% block body %}
+    <div class="container">
+        {% for post in posts %}
+            <article class="media content-section">
+                <!-- <img class="rounded-circle article-img" src=""> -->
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2" href="#">{{ post.user }}</a>
+                        <!-- <small class="text-muted">post.date_posted|date:"F d, Y"</small> -->
+                        <small class="text-muted">{{ post.last_updated }}</small>
+                    </div>
+                    <h2>
+                        <a class="article-title" 
+                        href="{% url 'content_detail' id=post.id %}">{{ post.title }}</a>
+                    </h2>
+                    <p class="article-content">{{ post.text }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+
+{% endblock body %}
+
+
+{% block js %}
+    <script>
+        console.log("hello2");  // print("hello")
+    </script>
+{% endblock js %}

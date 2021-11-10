@@ -1,0 +1,21 @@
+{% extends "Components\base.html" %}
+
+{% block body %}
+
+<div class="container">
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+            <a class="mr-2" href="#">Author name: {{ post_obj.user }}</a>
+            <small class="text-muted">Date: {{ post_obj.last_updated }}</small>
+            <a href="{% url 'content_update' pk=post_obj.id %}" class="btn btn-outline-secondary">Update</a>
+            <a href="{% url 'content_delete' number=post_obj.id %}" class="btn btn-outline-danger">Delete</a>
+            </div>
+            <h2><a class="article-title" 
+                href="">{{ post_obj.title }}</a></h2>
+            <p class="article-content">{{ post_obj.text }}</p>
+        </div>
+    </article>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,15 @@
+{% extends "Components/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <button>Submit</button>
+        </form>
+    </div>
+
+{% endblock body %}
+

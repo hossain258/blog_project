@@ -1,0 +1,6 @@
+content.tags.all()
+content.tags.filter(name="Python")
+tag = Tag.objects.create(name="new_tag")
+content.tags.add(tag)
+content.tags.remove(tag)
+tag.content_set.all()
